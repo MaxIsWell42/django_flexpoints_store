@@ -1,0 +1,1 @@
+My proposal for my contractor project is to make a store for Make School students to be able to buy Flex points. Ever just not have the energy to make it to Meredith's class? Not feeling like spending 30 minutes walking to and from the dorms to sign in to lab? Come put some of that ISA to good use
