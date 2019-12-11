@@ -1,8 +1,16 @@
 {% extends "contractor/base.html" %}
 {% block content %}
     {% for product in products %}
-        <h1>{{ product.title }}</h1>
-        <p>Price: {{product.cost }}</p>
-        <p>{{ product.context }} </p>
+    <article class="media content-section">
+        <div class="container m-2" style="border: 1px solid black">
+            <div class="article-metadata">
+                <a class="mr-2" href="#"><h1>{{ product.title }}</h1></a>
+            </div>
+            <img src="{{ product.image }}" style="width:200; height:200">
+
+            <p>Price: {{product.cost }}</p>
+            <small class="text-muted">Availablility: In Stock</small>
+        </div>
+    </article>
     {% endfor %}
 {% endblock content %}

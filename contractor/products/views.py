@@ -4,16 +4,19 @@ from django.http import HttpResponse
 # Mock data
 products = [
     {
-        'title': 'A single Flex point',
-        'cost': '$1'
+        'title': 'One Flex point',
+        'cost': '$1',
+        'image': 'static/contractor/flex.jpg',
     },
     {
         'title': 'Five Flex points',
-        'cost': '$5'
+        'cost': '$5',
+        'image': 'static/contractor/flex.jpg',
     },
     {
         'title': '10 Flex points',
-        'cost': '$9'
+        'cost': '$9',
+        'image': 'static/contractor/flex.jpg',
     }   
 ]
 
