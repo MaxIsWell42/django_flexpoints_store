@@ -6,17 +6,17 @@ products = [
     {
         'title': 'One Flex point',
         'cost': '$1',
-        'image': 'static/contractor/flex.jpg',
+        'image': '/static/contractor/flex.jpg',
     },
     {
         'title': 'Five Flex points',
         'cost': '$5',
-        'image': 'static/contractor/flex.jpg',
+        'image': '/static/contractor/flex.jpg',
     },
     {
         'title': '10 Flex points',
         'cost': '$9',
-        'image': 'static/contractor/flex.jpg',
+        'image': '/static/contractor/flex.jpg',
     }   
 ]
 
