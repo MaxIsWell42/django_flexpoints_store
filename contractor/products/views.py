@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Product
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+
 
 # Mock data
 products = [
@@ -29,5 +32,45 @@ def home(request):
     }
     return render(request, 'contractor/home.html', context)
 
+class ProductListView(ListView):
+    model = Product
+    template_name = 'products/home.html' # <app>/<model>_<viewtype>.html
+    context_object_name = 'products'
+    # ordering = ['-date_posted'] # to order from newest to oldest
+
+class ProductDetailView(DetailView):
+    model = Product
+
+class ProductCreateView(LoginRequiredMixin, CreateView):
+    model = Product
+    fields = ['title'], ['description']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+class ProductUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Product
+    fields = ['title'], ['description']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+class ProductDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Product
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
 def about(request):
-    return render(request, 'contractor/about.html')
+    return render(request, 'contractor/about.html', {'title': 'About'})

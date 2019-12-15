@@ -1,0 +1,22 @@
+{% extends "contractor/base.html" %}
+{% block content %}
+<article class="media content-section">
+    <!-- <img class="rounded-circle article-img" src="{{ product.users_purchased.profile.image.url }}"> -->
+    <div class="container m-2" style="border: 1px solid black">
+        <div class="article-metadata">
+            <h1 class="article-title">{{ product.title }}</h1></a>
+        </div>
+        <img src="{{ product.image }}" width="100"; height="100">
+        <p>Price: {{ product.cost }}</p>
+        <p>Description: {{ product.description }}
+        <small class="text-muted">Availablility: In Stock</small>
+        {% if object.author == user %}
+            <div>
+                <a class="btn btn-secondary btn-sm mtb-1" href="{% url 'product-update' object.id %}">Update</a>
+                <a class="btn btn-danger btn-sm mtb-1" href="{% url 'product-delete' object.id %}">Delete</a>
+            </div>
+        {% endif % }
+    </div>
+</article>
+
+{% endblock content %}
