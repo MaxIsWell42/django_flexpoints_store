@@ -1,5 +1,6 @@
 {% extends "contractor/base.html" %}
 {% block content %}
+    <h1 class="mb-3">Product by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
     {% for product in products %}
     <article class="media content-section">
         <!-- <img class="rounded-circle article-img" src="{{ product.users_purchased.profile.image.url }}"> -->

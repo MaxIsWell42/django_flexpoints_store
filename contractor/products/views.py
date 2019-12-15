@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Product
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
 
 
 # Mock data
@@ -37,6 +38,18 @@ class ProductListView(ListView):
     template_name = 'products/home.html' # <app>/<model>_<viewtype>.html
     context_object_name = 'products'
     # ordering = ['-date_posted'] # to order from newest to oldest
+    paginate_by = 5
+
+class UserProductListView(ListView):
+    model = Product
+    template_name = 'products/user_posts.html' # <app>/<model>_<viewtype>.html
+    context_object_name = 'products'
+    # ordering = ['-date_posted'] # to order from newest to oldest
+    paginate_by = 5
+
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        return Product.objects.filter(author=user).order_by('-date_posted')
 
 class ProductDetailView(DetailView):
     model = Product
