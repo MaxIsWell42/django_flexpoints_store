@@ -24,9 +24,6 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="container">
-                {% block content %}{% endblock %}
-            </div>
             <div class="col-md-2 col-sm-4 sidebar1">
                 <div class="logo img-fluid">
                     <img src="https://i.redd.it/71v6dzamepg11.jpg" class="img-responsive center-block" alt="Logo" width="150">
@@ -36,10 +33,10 @@
                     <ul class="list">
                         <h3><strong>The Flexchange</strong></h3>
                         <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="about.html">Login/Register</a></li>
-                        <li><a href="about.html">Collection</a></li>
-                        <li><a href="about.html">Get More/Spend Points</a></li>
-                        <li><a href="about.html">Subscriptions</a></li>
+                        <li><a href="{% url 'register' %}">Login/Register</a></li>
+                        <li><a href="#">Collection</a></li>
+                        <li><a href="#">Get More/Spend Points</a></li>
+                        <li><a href="#">Subscriptions</a></li>
                             <!-- <li class="list">
                                 <div class="dropdown">
                                     <i class="fa fa-list" aria-hidden="true"></i>My Wishlist <i class="fa fa-plus pull-right" aria-hidden="true"></i>
@@ -58,14 +55,28 @@
                     <ul class="list">
                         <h5><strong></strong></h5>
                         <!-- Todo: Fix this so it isn't a static url -->
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="about.html">Affiliates</a></li>
-                        <li><a href="about.html">Contact</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Affiliates</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-10 col-sm-8 main-content">
             <!--Main content code to be written here --> 
+            <main role="main" class="container">
+                <div class="container">
+                        <div class="col-md-8">
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

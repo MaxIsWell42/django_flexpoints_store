@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
 
 # Mock data
 products = [
@@ -7,6 +8,7 @@ products = [
         'title': 'One Flex point',
         'cost': '$1',
         'image': '/static/contractor/flex.jpg',
+        'likes': '0'
     },
     {
         'title': 'Five Flex points',
@@ -23,6 +25,7 @@ products = [
 def home(request):
     context = {
         'products': products
+        # 'products': Product.objects.all()
     }
     return render(request, 'contractor/home.html', context)
 
