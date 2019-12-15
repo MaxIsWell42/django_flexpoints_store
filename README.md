@@ -1,1 +1,5 @@
-My proposal for my contractor project is to make a store for Make School students to be able to buy Flex points. Ever just not have the energy to make it to Meredith's class? Not feeling like spending 30 minutes walking to and from the dorms to sign in to lab? Come put some of that ISA to good use
+[proposal.md](https://gist.github.com/HexSeal/5412aee5e6e4c4610a1367f8ab65601a)
+
+[rubric.md](https://gist.github.com/HexSeal/5d98b7e14afd2afcb614fe8b44fdc974)
+
+[Live Deployment!](https://flexpointsapp.herokuapp.com/)
