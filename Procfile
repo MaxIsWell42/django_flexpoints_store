@@ -1,1 +1,1 @@
-web: gunicorn django_contractor.wsgi
+web: gunicorn app:app

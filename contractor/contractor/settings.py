@@ -25,7 +25,7 @@ SECRET_KEY = 'df2x1^uw3!i3h)rxhij7-9&c+38rf-xdz)l6urzp&myx8o4&r%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['flexpointsapp.herokuapp.com']
 
 
 # Application definition
