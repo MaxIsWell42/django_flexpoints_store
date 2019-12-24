@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django import forms 
 from django.urls import reverse
 
+
 class Product(models.Model):
     title = models.CharField(max_length=100, default='Flex points')
     description = models.CharField(max_length=200, default="Some flex points to keep you safe, traveler")
@@ -12,6 +13,7 @@ class Product(models.Model):
     users_purchased = models.ForeignKey(User, on_delete=models.CASCADE, default='None')
     is_available = forms.TypedChoiceField(coerce=lambda x: x =='True', 
                                         choices=((False, 'No'), (True, 'Yes')))
+    profile_image = models.ImageField(upload_to='media/')
 
     def __str__(self):
         return self.title
