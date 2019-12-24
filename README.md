@@ -12,16 +12,16 @@
 
 <h4>To install the packages needed to run this project, first create a virtual environment so you don't have to keep anything on your computer you don't need! </h4>
 <h5>On Mac:</h5>
-># pip comes with python by default, but if you don't have that you can do:
->python3 -m pip install --user virtualenv
-># Navigate to the file in the terminal, and activate the virtual environment:
->source contractor/bin/activate
-># You're all set!
+> # pip comes with python by default, but if you don't have that you can do:
+> python3 -m pip install --user virtualenv
+> # Navigate to the file in the terminal, and activate the virtual environment:
+> source contractor/bin/activate
+> # You're all set!
 
 <h5> On Windwos:</h5>
-># pip comes with python by default, but if you don't have that you can do:
->python -m pip install --user 
->.\contractor\Scripts\activate
+> # pip comes with python by default, but if you don't have that you can do:
+> python -m pip install --user 
+> .\contractor\Scripts\activate
 
 
 
