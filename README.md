@@ -15,20 +15,31 @@
 First, start by closing the repository:
 git clone hhttps://github.com/HexSeal/django_flexpoints_store
 
-Start by installing virtualenv if you don't have it
+
+Start by installing virtualenv if you don't have it:
+
 pip install virtualenv
 
-Once installed access the project folder
+
+Once installed access the project folder:
+
 cd django_flexpoints_store
 
-Create a virtual environment
+
+Create a virtual environment:
+
 virtualenv venv
 
-Enable the virtual environment
+
+Enable the virtual environment:
+
 source venv/bin/activate
 
-Install the python dependencies on the virtual environment
+
+Install the python dependencies on the virtual environment:
+
 pip install -r requirements.txt
+
 
 <h2> HOW TO RUN SERVER </h2>
 (Heroku):
