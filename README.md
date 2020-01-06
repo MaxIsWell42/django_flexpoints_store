@@ -23,22 +23,22 @@ Start by installing virtualenv if you don't have it:
 
 Once installed access the project folder:
 
-  cd django_flexpoints_store
+    cd django_flexpoints_store
 
 
 Create a virtual environment:
 
-  virtualenv venv
+    virtualenv venv
 
 
 Enable the virtual environment:
 
-  source venv/bin/activate
+    source venv/bin/activate
 
 
 Install the python dependencies on the virtual environment:
 
-  pip install -r requirements.txt
+    pip install -r requirements.txt
 
 
 <h2> HOW TO RUN SERVER </h2>
